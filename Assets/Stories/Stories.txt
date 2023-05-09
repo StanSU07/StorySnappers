@@ -1,0 +1,86 @@
+:: StoryTitle
+Story Snappers
+
+:: StoryData
+{
+ "ifid": "0712B4DE-8A41-45EF-8EC4-8F622E885A6E",
+ "format": "Entweedle",
+ "format-version": "1.1.1",
+ "startnode": "1",
+ "zoom": "1",
+ "start": "The Circus Thief"
+}
+
+:: UserScript [script]
+
+
+:: UserStylesheet [stylesheet]
+
+
+:: The Circus Thief [3_PLAYERS START] {"position":"800,425","size":"100,100"}
+$3$ stole the circus jewel.
+"Muahaha, you will never catch me"
+
+The group follows him on a carriage [[Selection1]]
+
+
+
+:: SelectionA2 {"position":"500,700","size":"100,100"}
+ $1$ jumps towards $3$ and tries to bite them
+ $3$ smacks $1$ in the face and tries to steal $1$ as well [[SelectionA2.1]]
+ $3$ begs for mercy on their knees [[SelectionA2.2]]
+
+:: Selection1 {"position":"800,600","size":"100,100"}
+ You see $3$ in front of you
+
+ $0$ mounts on $1$ and attacks $3$ [[SelectionA2]]
+ $2$ tries to stomp $3$ to death [[SelectionB2]]
+
+:: SelectionB2 {"position":"1100,700","size":"100,100"}
+ $2$ starts trying to stomp $3$ to death as the ground rumbles
+ $3$ tries to dodge and smack $2$ on the ass [[SelectionB2.1]]
+ $3$ tries to immitate a mouse to scare $2$ [[SelectionB2.2]]
+
+:: SelectionA2.1 {"position":"300,800","size":"100,100"}
+ $3$ smacked $1$ on the face and starts dragging them on the floor, trying to run away
+ $2$ goes in a rage mode and starts attacking everything [[SelectionA2.1.1]]
+ $0$ starts crying as $1$ is being carried away [[SelectionA2.1.2]]
+
+:: SelectionA2.2 {"position":"600,800","size":"100,100"}
+ $3$ is on their knees, begging and praying 
+ $0$ takes back the jewel and gives $3$ a slap in the face [[SelectionA2.2.1]]
+ $1$ is hungry and eats $3$ [[SelectionA2.2.2]]
+
+:: SelectionB2.1 {"position":"1000,800","size":"100,100"}
+ $3$ jumps to the right and tries to dodge $2$
+ $3$ smacks $2$ on the right cheek and runs away [[SelectionB2.1.2]]
+ $3$ slips on a banana peel and falls under $2$'s belly [[SelectionB2.1.1]]
+
+:: SelectionB2.2 {"position":"1300,800","size":"100,100"}
+ $3$ immitates a mouse like in Tom and Jerry, with hopes to scare $2$
+ $2$ falls on the ground and makes everyone fall from the shock [[SelectionB2.2.1]]
+ $2$ is not scared of the mouse and stomps $3$ [[SelectionB2.2.2]]
+
+:: SelectionA2.1.1 [END] {"position":"200,900","size":"100,100"}
+ $2$ attacks everything and destroys the whole place, leaving rubble and bodies everywhere
+
+:: SelectionA2.1.2 [END] {"position":"400,900","size":"100,100"}
+ $0$ cries like a little baby while $3$ runs away with the jewel and $1$
+
+:: SelectionA2.2.1 [END] {"position":"500,900","size":"100,100"}
+ $0$ takes back the jewel and gives $3$ a slap in the face
+
+:: SelectionA2.2.2 [END] {"position":"700,900","size":"100,100"}
+ $1$ starts munching on the tasty $3$ while everyone is in shock around them
+
+:: SelectionB2.2.1 [END] {"position":"1200,900","size":"100,100"}
+ $2$ falls from on the ground, scared and makes everyone fall as well
+
+:: SelectionB2.2.2 [END] {"position":"1400,900","size":"100,100"}
+ $3$ gets turned into a pancake due to the heavy stomp from $2$
+
+:: SelectionB2.1.2 [END] {"position":"1100,900","size":"100,100"}
+ $2$ gets smacked super hard on the cheek and cries, while $3$ runs away
+
+:: SelectionB2.1.1 [END] {"position":"900,900","size":"100,100"}
+ $3$ slips on a forgotten banana peel and ends on the ground, while $2$ ends up on top of them
