@@ -32,19 +32,6 @@ public class CameraPreview : MonoBehaviour
                 validCameraDevices.Add(WebCamTexture.devices[i]);
             }
         }
-        
-        // Check if any cameras are available
-        if (validCameraDevices.Count == 0)
-        {
-            Debug.LogWarning("No cameras detected.");
-            return;
-        } 
-        //else
-        //{
-        //    string names = "";
-        //    validCameraDevices.ForEach(cam => names += cam.name + ", ");
-        //    camNameText.text = "cam names: " + names;
-        //}
 
         // Start the camera preview using the current camera index
         SwitchCamera();
@@ -82,18 +69,18 @@ public class CameraPreview : MonoBehaviour
 
         camTexture.Play();
 
-        // Set the preview texture of the specified RawImage component 0,180,90 / 0,0,-90
+        // Set the preview texture of the specified RawImage component
         previewImage.texture = camTexture;
 
         if (validCameraDevices[currentCameraIndex].isFrontFacing)
         {
-            camRotation.eulerAngles = new Vector3(180, 0, 0);
+            camRotation.eulerAngles = new Vector3(0, 180, 90);
             capturedImage.transform.localRotation = camRotation;
 
         }
         else
         {
-            camRotation.eulerAngles = new Vector3(0, 0, 0);
+            camRotation.eulerAngles = new Vector3(0, 0, 270);
             capturedImage.transform.localRotation = camRotation;
         }
     }
@@ -104,36 +91,31 @@ public class CameraPreview : MonoBehaviour
         // Capture a photo from the camera feed
         Texture2D photoTexture = new Texture2D(camTexture.width, camTexture.height);
 
-        // Set the flip axis based on the camera facing direction
-        bool flipHorizontal = !(validCameraDevices[currentCameraIndex].isFrontFacing);
-
         // Copy the pixels from the camera feed to the photo texture
         Color[] pixels = camTexture.GetPixels();
-        Color[] flippedPixels = new Color[pixels.Length];
-        int width = camTexture.width;
-        int height = camTexture.height; 
-        for (int y = 0; y < height; y++)
-        {
-            for (int x = 0; x < width; x++)
-            {
-                int srcX = flipHorizontal ? (width - x - 1) : x;
-                int dstIdx = y * width + x;
-                int srcIdx = y * width + srcX;
-                flippedPixels[dstIdx] = pixels[srcIdx];
-            }
-        }
-        photoTexture.SetPixels(flippedPixels);
+
+        // Update the photo texture with the rotated pixels
+        photoTexture.SetPixels(pixels);
         photoTexture.Apply();
 
         // Set the captured texture of the specified RawImage component
         capturedImage.texture = photoTexture;
 
-        // Save the photo to disk
-
+        // Save the photo to disk based on camera facing direction
         byte[] photoData = photoTexture.EncodeToJPG(100);
-        File.WriteAllBytes(Application.persistentDataPath + "/photo_" + storyName+ "_" + photoCount + ".jpg", photoData);
+        if (validCameraDevices[currentCameraIndex].isFrontFacing)
+        {
+            File.WriteAllBytes(Application.persistentDataPath + "/front_facing_photo_" + storyName + "_" + photoCount + ".jpg", photoData);
+        }
+        else
+        {
+            File.WriteAllBytes(Application.persistentDataPath + "/back_facing_photo_" + storyName + "_" + photoCount + ".jpg", photoData);
+        }
+
+        // Increment photo count
         photoCount++;
     }
+
 
     public void UpdateStoryName(string name) {
         storyName = name;

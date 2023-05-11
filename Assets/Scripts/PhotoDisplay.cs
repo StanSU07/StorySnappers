@@ -35,6 +35,19 @@ public class PhotoDisplay : MonoBehaviour
             Texture2D photoTexture = new Texture2D(2, 2);
             photoTexture.LoadImage(photoData);
             photoSlots[i].sprite = Sprite.Create(photoTexture, new Rect(0, 0, photoTexture.width, photoTexture.height), Vector2.zero);
+
+            // Extract camera type from filename
+            string filename = Path.GetFileName(photoPaths[i]);
+            if (filename.Contains("front_facing_photo_"))
+            {
+                // Apply rotation in X or Y axis
+                photoSlots[i].rectTransform.localRotation = Quaternion.Euler(0, 180, 90);
+            }
+            else if (filename.Contains("back_facing_photo_"))
+            {
+                // Apply rotation in Z axis
+                photoSlots[i].rectTransform.localRotation = Quaternion.Euler(0, 0, 270);
+            }
         }
     }
 
