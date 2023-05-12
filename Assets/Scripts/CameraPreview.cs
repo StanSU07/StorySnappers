@@ -121,4 +121,16 @@ public class CameraPreview : MonoBehaviour
         storyName = name;
         photoCount = 0;
     }
+
+    private void OnApplicationQuit()
+
+    {
+        Debug.Log("Application is quitting");
+        // Delete all saved photos
+        string[] photoPaths = Directory.GetFiles(Application.persistentDataPath, "*.jpg");
+        foreach (string path in photoPaths)
+        {
+            File.Delete(path);
+        }
+    }
 }

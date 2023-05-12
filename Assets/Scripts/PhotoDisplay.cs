@@ -4,6 +4,7 @@ using System.IO;
 using UnityEngine.Experimental.AI;
 using System.Collections.Generic;
 using TMPro;
+using System.Security.Cryptography.X509Certificates;
 
 public class PhotoDisplay : MonoBehaviour
 {
@@ -13,6 +14,21 @@ public class PhotoDisplay : MonoBehaviour
     
     public List<string> chosenTexts = new List<string>();
     public TextMeshProUGUI[] choiceTextObjs;
+
+    // variables for zoomed image display
+    public GameObject zoomedPhotoPanel;
+    public Image zoomedPhoto;
+    private int currentZoomedIndex;
+
+    public void OnPreviousButtonClicked()
+    {
+        ScrollZoomedPhotos(-1);
+    }
+
+    public void OnNextButtonClicked()
+    {
+        ScrollZoomedPhotos(1);
+    }
 
     public void SetPhotoDisplayPage()
     {
@@ -63,4 +79,50 @@ public class PhotoDisplay : MonoBehaviour
     {
         chosenTexts.Add(choiceText);
     }
+    // displays the zoomed photo panel and sets the current photo index
+    public void DisplayZoomedPhoto(int index)
+    {
+        currentZoomedIndex = index;
+        zoomedPhotoPanel.SetActive(true);
+        byte[] photoData = File.ReadAllBytes(photoPaths[index]);
+        Texture2D photoTexture = new Texture2D(2, 2);
+        photoTexture.LoadImage(photoData);
+        zoomedPhoto.sprite = Sprite.Create(photoTexture, new Rect(0, 0, photoTexture.width, photoTexture.height), Vector2.zero);
+
+    }
+
+    // hides the zoomed photo panel
+    public void HideZoomedPhoto()
+    {
+        zoomedPhotoPanel.SetActive(false);
+    }
+
+    // scrolls through the photos in the zoomed photo panel
+    public void ScrollZoomedPhotos(int direction)
+    {
+        currentZoomedIndex += direction;
+        if (currentZoomedIndex < 0)
+        {
+            currentZoomedIndex = photoPaths.Length - 1;
+        }
+        else if (currentZoomedIndex >= photoPaths.Length)
+        {
+            currentZoomedIndex = 0;
+        }
+        DisplayZoomedPhoto(currentZoomedIndex);
+    }
+    
+    public void SavePhoto()
+    {
+        Texture2D photoTexture = zoomedPhoto.sprite.texture;
+        byte[] photoData = photoTexture.EncodeToJPG();
+        string filename = "photo_" + Path.GetFileNameWithoutExtension(photoPaths[currentZoomedIndex]) + ".jpg";
+        string filePath = Path.Combine(Application.persistentDataPath, filename);
+        File.WriteAllBytes(filePath, photoData);
+
+        // Save to gallery
+        NativeGallery.Permission permission = NativeGallery.SaveImageToGallery(photoData, "MyGallery", filename, null);
+        Debug.Log("Permission result: " + permission);
+    }
+
 }

@@ -34,7 +34,6 @@ public class CameraScript : MonoBehaviour
 
         tex.Play();
 
-        //_cameraDisplayWrapperTransform.rotation = Quaternion.Euler(0, 0, device.isFrontFacing ? 90 : 270);
     }
         
     public void StopCam()
