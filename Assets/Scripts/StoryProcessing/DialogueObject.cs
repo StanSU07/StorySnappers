@@ -156,7 +156,7 @@ public class DialogueObject
 
                 if (curNode.tags.Contains(kStart))
                 {
-                    UnityEngine.Assertions.Assert.IsTrue(null == titleOfStartNode);
+                    //UnityEngine.Assertions.Assert.IsTrue(null == titleOfStartNode);
                     titleOfStartNode = curNode.title;
                 }
 

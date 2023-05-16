@@ -66,23 +66,9 @@ public class CameraPreview : MonoBehaviour
         }
         previewImage.transform.localRotation = camRotation;
 
-
-        camTexture.Play();
-
-        // Set the preview texture of the specified RawImage component
         previewImage.texture = camTexture;
 
-        if (validCameraDevices[currentCameraIndex].isFrontFacing)
-        {
-            camRotation.eulerAngles = new Vector3(0, 180, 90);
-            capturedImage.transform.localRotation = camRotation;
-
-        }
-        else
-        {
-            camRotation.eulerAngles = new Vector3(0, 0, 270);
-            capturedImage.transform.localRotation = camRotation;
-        }
+        camTexture.Play();
     }
 
     public void TakePhoto()
@@ -97,6 +83,15 @@ public class CameraPreview : MonoBehaviour
         // Update the photo texture with the rotated pixels
         photoTexture.SetPixels(pixels);
         photoTexture.Apply();
+
+        if (validCameraDevices[currentCameraIndex].isFrontFacing)
+        {
+            photoTexture = RotatePhoto(photoTexture, false);
+        }
+        else
+        {
+            photoTexture = RotatePhoto(photoTexture, true);
+        }
 
         // Set the captured texture of the specified RawImage component
         capturedImage.texture = photoTexture;
@@ -116,6 +111,30 @@ public class CameraPreview : MonoBehaviour
         photoCount++;
     }
 
+    private Texture2D RotatePhoto(Texture2D originalTexture, bool clockwise)
+    {
+        Color32[] original = originalTexture.GetPixels32();
+        Color32[] rotated = new Color32[original.Length];
+        int w = originalTexture.width;
+        int h = originalTexture.height;
+
+        int iRotated, iOriginal;
+
+        for (int j = 0; j < h; ++j)
+        {
+            for (int i = 0; i < w; ++i)
+            {
+                iRotated = (i + 1) * h - j - 1;
+                iOriginal = clockwise ? original.Length - 1 - (j * w + i) : j * w + i;
+                rotated[iRotated] = original[iOriginal];
+            }
+        }
+
+        Texture2D rotatedTexture = new Texture2D(h, w);
+        rotatedTexture.SetPixels32(rotated);
+        rotatedTexture.Apply();
+        return rotatedTexture;
+    }
 
     public void UpdateStoryName(string name) {
         storyName = name;

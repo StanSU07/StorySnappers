@@ -14,6 +14,8 @@ public class PhotoDisplay : MonoBehaviour
     
     public List<string> chosenTexts = new List<string>();
     public TextMeshProUGUI[] choiceTextObjs;
+    public TextMeshProUGUI[] choiceTextObjs2;
+
 
     // variables for zoomed image display
     public GameObject zoomedPhotoPanel;
@@ -34,6 +36,7 @@ public class PhotoDisplay : MonoBehaviour
     {
         SetPhotoDisplayImages();
         SetPhotoDisplayTexts();
+        SetPhotoDisplayTexts2();
     }
 
     void SetPhotoDisplayImages ()
@@ -74,6 +77,20 @@ public class PhotoDisplay : MonoBehaviour
             choiceTextObjs[i].text = chosenTexts[i];
         }
     }
+    private void SetPhotoDisplayTexts2()
+    {
+        for (int i = 0; i < choiceTextObjs2.Length; i++)
+        {
+            choiceTextObjs2[i].text = chosenTexts[i];
+        }
+    }
+    private void SetZoomedPhotoDisplayText()
+    {
+        if (currentZoomedIndex >= 0 && currentZoomedIndex < chosenTexts.Count)
+        {
+            zoomedPhoto.GetComponentInChildren<TextMeshProUGUI>().text = chosenTexts[currentZoomedIndex];
+        }
+    }
 
     public void AddChosenText(string choiceText)
     {
@@ -88,6 +105,9 @@ public class PhotoDisplay : MonoBehaviour
         Texture2D photoTexture = new Texture2D(2, 2);
         photoTexture.LoadImage(photoData);
         zoomedPhoto.sprite = Sprite.Create(photoTexture, new Rect(0, 0, photoTexture.width, photoTexture.height), Vector2.zero);
+
+        // Update the text displayed on the zoomed photo
+        SetZoomedPhotoDisplayText();
 
     }
 

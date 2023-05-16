@@ -84,3 +84,6 @@ The group follows him on a carriage [[Selection1]]
 
 :: SelectionB2.1.1 [END] {"position":"900,900","size":"100,100"}
  $3$ slips on a forgotten banana peel and ends on the ground, while $2$ ends up on top of them
+
+:: Knight [START] {"position":"1850,400","size":"100,100"}
+BRE

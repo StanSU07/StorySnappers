@@ -10,8 +10,6 @@ public class ComicSelectButton : MonoBehaviour
 
     private DialogueController dialogueController;
 
-    
-
     private void OnEnable()
     {
         dialogueController = FindObjectOfType<DialogueController>();
