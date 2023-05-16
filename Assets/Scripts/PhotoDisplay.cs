@@ -8,18 +8,18 @@ using System.Security.Cryptography.X509Certificates;
 
 public class PhotoDisplay : MonoBehaviour
 {
-    public Image[] photoSlots; // Array of Image components for displaying photos
+    public RawImage[] photoSlots; // Array of Image components for displaying photos
     private string[] photoPaths; // Array of file paths for saved photos
     
     
-    public List<string> chosenTexts = new List<string>();
+    public List<string> chosenTexts = new();
     public TextMeshProUGUI[] choiceTextObjs;
     public TextMeshProUGUI[] choiceTextObjs2;
 
 
     // variables for zoomed image display
     public GameObject zoomedPhotoPanel;
-    public Image zoomedPhoto;
+    public RawImage zoomedPhoto;
     private int currentZoomedIndex;
 
     public void OnPreviousButtonClicked()
@@ -53,20 +53,27 @@ public class PhotoDisplay : MonoBehaviour
             byte[] photoData = File.ReadAllBytes(photoPaths[i]);
             Texture2D photoTexture = new Texture2D(2, 2);
             photoTexture.LoadImage(photoData);
-            photoSlots[i].sprite = Sprite.Create(photoTexture, new Rect(0, 0, photoTexture.width, photoTexture.height), Vector2.zero);
+            photoSlots[i].texture = photoTexture;
 
             // Extract camera type from filename
             string filename = Path.GetFileName(photoPaths[i]);
             if (filename.Contains("front_facing_photo_"))
             {
-                // Apply rotation in X or Y axis
-                photoSlots[i].rectTransform.localRotation = Quaternion.Euler(0, 180, 90);
+                Rect uvRect = photoSlots[i].uvRect;
+                uvRect.position = new Vector2(1f, 0f);
+                uvRect.size = new Vector2(1f, 0.75f);
+
+                photoSlots[i].uvRect = uvRect;
             }
             else if (filename.Contains("back_facing_photo_"))
             {
-                // Apply rotation in Z axis
-                photoSlots[i].rectTransform.localRotation = Quaternion.Euler(0, 0, 270);
+                Rect uvRect = photoSlots[i].uvRect;
+                uvRect.position = new Vector2(1f, 1.25f);
+                uvRect.size = new Vector2(1f, 0.75f);
+
+                photoSlots[i].uvRect = uvRect;
             }
+
         }
     }
 
@@ -104,7 +111,27 @@ public class PhotoDisplay : MonoBehaviour
         byte[] photoData = File.ReadAllBytes(photoPaths[index]);
         Texture2D photoTexture = new Texture2D(2, 2);
         photoTexture.LoadImage(photoData);
-        zoomedPhoto.sprite = Sprite.Create(photoTexture, new Rect(0, 0, photoTexture.width, photoTexture.height), Vector2.zero);
+        zoomedPhoto.texture = photoTexture;
+
+
+        // Extract camera type from filename
+        string filename = Path.GetFileName(photoPaths[index]);
+        if (filename.Contains("front_facing_photo_"))
+        {
+            Rect uvRect = zoomedPhoto.uvRect;
+            uvRect.position = new Vector2(1f, 0f);
+            uvRect.size = new Vector2(1f, 0.75f);
+
+            zoomedPhoto.uvRect = uvRect;
+        }
+        else if (filename.Contains("back_facing_photo_"))
+        {
+            Rect uvRect = zoomedPhoto.uvRect;
+            uvRect.position = new Vector2(1f, 1.25f);
+            uvRect.size = new Vector2(1f, 0.75f);
+
+            zoomedPhoto.uvRect = uvRect;
+        }
 
         // Update the text displayed on the zoomed photo
         SetZoomedPhotoDisplayText();
@@ -134,7 +161,7 @@ public class PhotoDisplay : MonoBehaviour
     
     public void SavePhoto()
     {
-        Texture2D photoTexture = zoomedPhoto.sprite.texture;
+        Texture2D photoTexture = zoomedPhoto.texture as Texture2D;
         byte[] photoData = photoTexture.EncodeToJPG();
         string filename = "photo_" + Path.GetFileNameWithoutExtension(photoPaths[currentZoomedIndex]) + ".jpg";
         string filePath = Path.Combine(Application.persistentDataPath, filename);

@@ -20,6 +20,7 @@ public class CameraPreview : MonoBehaviour
     private int photoCount;
     private string storyName;
 
+
     private void Start()
     {
 
@@ -58,7 +59,7 @@ public class CameraPreview : MonoBehaviour
         Quaternion camRotation = Quaternion.identity;
         if (validCameraDevices[currentCameraIndex].isFrontFacing)
         {
-            camRotation.eulerAngles = new Vector3(0, 180, 90);
+            camRotation.eulerAngles = new Vector3(0, 0, 90);
         }
         else
         {
@@ -87,10 +88,23 @@ public class CameraPreview : MonoBehaviour
         if (validCameraDevices[currentCameraIndex].isFrontFacing)
         {
             photoTexture = RotatePhoto(photoTexture, false);
+
+            Rect uvRect = capturedImage.uvRect;
+            uvRect.position = new Vector2(1f, 0f);
+            uvRect.size = new Vector2(1f, 0.75f);
+
+            capturedImage.uvRect = uvRect;
+
         }
         else
         {
             photoTexture = RotatePhoto(photoTexture, true);
+
+            Rect uvRect = capturedImage.uvRect;
+            uvRect.position = new Vector2(1f, 1.25f);
+            uvRect.size = new Vector2(1f, 0.75f);
+
+            capturedImage.uvRect = uvRect;
         }
 
         // Set the captured texture of the specified RawImage component
