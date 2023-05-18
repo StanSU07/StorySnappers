@@ -155,7 +155,7 @@ public class CameraPreview : MonoBehaviour
         photoCount = 0;
     }
 
-    private void OnApplicationQuit()
+    public void PhotoDelete()
 
     {
         Debug.Log("Application is quitting");

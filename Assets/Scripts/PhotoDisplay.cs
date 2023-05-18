@@ -91,13 +91,7 @@ public class PhotoDisplay : MonoBehaviour
             choiceTextObjs2[i].text = chosenTexts[i];
         }
     }
-    private void SetZoomedPhotoDisplayText()
-    {
-        if (currentZoomedIndex >= 0 && currentZoomedIndex < chosenTexts.Count)
-        {
-            zoomedPhoto.GetComponentInChildren<TextMeshProUGUI>().text = chosenTexts[currentZoomedIndex];
-        }
-    }
+    
 
     public void AddChosenText(string choiceText)
     {
@@ -137,7 +131,13 @@ public class PhotoDisplay : MonoBehaviour
         SetZoomedPhotoDisplayText();
 
     }
-
+    private void SetZoomedPhotoDisplayText()
+    {
+        if (currentZoomedIndex >= 0 && currentZoomedIndex < chosenTexts.Count)
+        {
+            zoomedPhoto.GetComponentInChildren<TextMeshProUGUI>().text = chosenTexts[currentZoomedIndex];
+        }
+    }
     // hides the zoomed photo panel
     public void HideZoomedPhoto()
     {

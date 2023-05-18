@@ -85,5 +85,287 @@ The group follows him on a carriage [[Selection1]]
 :: SelectionB2.1.1 [END] {"position":"900,900","size":"100,100"}
  $3$ slips on a forgotten banana peel and ends on the ground, while $2$ ends up on top of them
 
-:: Knight [START] {"position":"1850,400","size":"100,100"}
-BRE
+
+
+
+
+:: Knight and Princess [START] {"position":"3950,200","size":"100,100"}
+$0$ and $1$ are walking together throught Castle. $1$ suddenly asks $0$ where they should go?
+
+$0$ carries $1$ to their bedroom[[Love and Secrets]]
+$1$ leads $0$ Blindfolded to the Dungeon[[Power and Challenges]]
+$0$ and $1$ run to the Cafeteria[[Intrigue and Comedy]]
+
+:: Love and Secrets {"position":"5450,500","size":"100,100"}
+  $0$ puts $1$ in their bed and sees a weird looking bag. $1$ asks $0$ not to open it.
+  
+  $0$ opens the suspicios bag  [[Secrets]]
+  $0$ listens to $1$ and doesn't open the bag [[Love]]
+
+:: Power and Challenges {"position":"3950,500","size":"100,100"}
+As they go down in the dungeon, they find a locked door and a dark path.
+
+$1$ takes a torch and leads $0$ in the dark path[[Powers]]
+$0$ kicks down the locked door [[Adventure]]
+
+:: Intrigue and Comedy {"position":"2450,500","size":"100,100"}
+In the cafeteria, they see the Duke of Ipandia, a person that wants to marry $1$.
+
+$1$ and $0$ go to greet the Duke [[Intrigue]]
+$1$ goes to the pastry table and starts eating a ton of cakes [[Food Coma]]
+
+
+:: Love {"position":"5050,600","size":"100,100"}
+$1$ hugs $0$ as a token of appreciation
+
+$1$ grabs $0$, looks them in the eyes and says that they love them[[Affection]]
+$0$ pushes $1$ away because this is not allowed[[Boundaries]]
+
+:: Secrets {"position":"5750,600","size":"100,100"}
+$0$ sees a weapon coated with some kind of liquid and a note.
+
+$1$ towards the $0$ and takes out the weapon[[Murder]]
+$1$ tries to explain what $0$ sees in the bag[[Conspiracy]]
+
+:: Murder {"position":"5550,700","size":"100,100"}
+$1$ has the weapon while $0$ begs them to not do anything stupid.
+
+$1$ attacks $0$ with the weapon[[Silence]]
+$1$ attacks themself with the weapon[[Sacrifice]]
+
+:: Conspiracy {"position":"5950,700","size":"100,100"}
+$1$ tells $0$ that the note is a threat from their younger sister that wants the throne.
+
+$0$ hugs $1$ and promises to protect them[[Belief]]
+$0$ opens the note and gasps with surprise[[Disbelief]]
+
+:: Sacrifice [END] {"position":"5450,900","size":"100,100"}
+$1$ falls to the ground, poisoned from the weapon to sleep for eternity and never age.
+
+:: Silence [END] {"position":"5650,900","size":"100,100"}
+$0$ falls to the ground, forever silenced to keep the secrets of the Princess with them.
+
+:: Belief [END] {"position":"6050,900","size":"100,100"}
+$0$ and $1$ promise to each other to work together and expose the younger sister
+
+:: Disbelief [END] {"position":"5850,900","size":"100,100"}
+ $0$ finds out that $1$ wants to kill the king and immediately locks them up for conspiracy
+
+:: Boundaries {"position":"4850,700","size":"100,100"}
+$1$ doesn't under$0$d why they can't be in love
+
+$1$ falls on their knees and starts crying[[Pain]]
+$1$ gets angry and starts throwing things at $0$[[Anger]]
+
+:: Affection {"position":"5250,700","size":"100,100"}
+$1$ expresses their feelings of love and care for $0$, which they had for a long time.
+
+$1$ proposes to $0$ by falling on their knees and taking out a ring [[Marriage]]
+$0$ tells $1$ that they are in love with $1$'s younger sister[[Plot Twist]]
+
+
+:: Anger [END] {"position":"4750,900","size":"100,100"}
+$0$ tries to calm $1$ down as they throws Vases and Pillows at $0$, for not under$0$ding their love
+
+:: Pain [END] {"position":"4950,900","size":"100,100"}
+As $1$ cries on the floor, $0$ explains that their responsibilties as Royals are more important than love
+
+:: Marriage [END] {"position":"5350,900","size":"100,100"}
+$0$ accepts the proposal with a smile on their face, disregarding any Royal duties and decides to marry $1$
+
+:: Plot Twist [END] {"position":"5150,900","size":"100,100"}
+$1$'s sister then comes in the room and kisses $0$, while $1$ is crying on the floor, heartbroken
+
+:: Adventure {"position":"3550,600","size":"100,100"}
+Inside the room they find a treasure box and a shiny ball
+
+$0$ shakes the shiny ball [[Portal]]
+$1$ opens the treasure box [[Treasure]]
+
+:: Powers {"position":"4350,600","size":"100,100"}
+As they walk in the dark path, they hear a weird sound
+
+$1$ investigates what the sound is [[Trap]]
+$0$ investigates what the sound is [[Hero]]
+
+:: Trap {"position":"4150,700","size":"100,100"}
+$1$ steps on a pressure plate and triggers a pitfall. She starts falling in the deep hole.
+
+$0$ grabs her by the hand and tries to pull her up [[Saviour]]
+$1$ transforms into a shape-shifting dragon and flies up from the trap [[Dragon]]
+
+:: Hero {"position":"4550,700","size":"100,100"}
+$0$ hears the pitfall opening and tries to dogde it
+
+$0$ jumps towards $1$ with hope to not fall in the pitfall [[Injury]]
+$1$ uses her secret magic powers to levitate $0$ out of the trap [[Sorcerer]]
+
+:: Saviour [END] {"position":"4050,900","size":"100,100"}
+$0$ pulls $1$ out of the pit and saves her life, fulfilling his duty as a knight
+
+:: Dragon [END] {"position":"4250,900","size":"100,100"}
+$1$ scares $0$ to death, as they land in their Dragon form on the ground
+
+
+:: Sorcerer [END] {"position":"4450,900","size":"100,100"}
+$1$ levitates $0$ just like a little toy as they flots in the air. Then $1$ lets them safely on the ground.
+
+:: Injury [END] {"position":"4650,900","size":"100,100"}
+$0$ falls on top of $1$, escaping the pitfall, but breaking her neck due to the heavy armor. $1$ is dead.
+
+:: Portal {"position":"3350,700","size":"100,100"}
+The shiny balls starts lighting up and creates a big portal in the room
+
+A tentacle shows up from the portal and pulls $0$ [[Monster]]
+$1$ pushes $0$ into the portal [[Traitor]]
+
+:: Treasure {"position":"3750,700","size":"100,100"}
+$1$ finds a bunch of a gold, a crown and a black sword in the chest.
+
+$1$ takes the crown and puts it on [[Queen]]
+$0$ takes the sword and unwillingly attacks $1$ [[Curse]]
+
+:: Monster [END] {"position":"3250,900","size":"100,100"}
+$0$ ends up on the other side of the portal with a very hungry Kraken.
+
+:: Traitor [END] {"position":"3450,900","size":"100,100"}
+$0$ ends up in the portal, just fo find a fantastic world, while $1$ tries to get rich with the small treasure on the other side.
+
+:: Queen [END] {"position":"3650,900","size":"100,100"}
+$1$ gains immense power and becomes the rules of the Kingdom of Medovania.
+
+:: Curse [END] {"position":"3850,900","size":"100,100"}
+$0$ becomes a demon, kills $1$ and starts destroying the whole kingdom, absorbing all the souls killed.
+
+:: Intrigue {"position":"2050,600","size":"100,100"}
+The Duke falls on his knees and asks $1$ to marry him
+
+$1$ refuses to marry the Duke and slaps him in the face [[Fight]]
+$1$ starts crying from happines and says "Yes" [[Lovers]]
+
+:: Food Coma {"position":"2850,600","size":"100,100"}
+As $1$ gets stuffed with cake, they start to choke with the sweet, sweet pastry. 
+
+$0$ helps out by doing the Heimlich [[Helper]]
+$1$ faints to the ground, as $0$ eats croissant [[By$0$der]]
+
+:: Helper {"position":"3050,700","size":"100,100"}
+As $0$ tries to help $1$, the guards come and try to stop $0$, thinking that $1$ is in danger
+
+$0$ fights back the guards as $1$ is choking [[Fighter]]
+$0$ uses $1$ as shield to stop the guards [[Shield]]
+
+:: Bystander {"position":"2650,700","size":"100,100"}
+$1$ stands on the ground while people rush to help them
+
+$0$ starts punching $1$'s stomach in order to help [[Violece]]
+$0$ sprays $1$ with water to wake them [[Jokes]]
+
+:: Shield [END] {"position":"3150,900","size":"100,100"}
+$1$ starts kicking at the guards and eventually spits out the food in the Duke's face
+
+:: Fighter [END] {"position":"2950,900","size":"100,100"}
+$0$ starts defeating the guards but $1$ chokes. faints to the ground and dies from suffocation.
+
+:: Violece [END] {"position":"2550,900","size":"100,100"}
+The punching worked, as $1$ spits the food in $0$'s face and then gives $0$ a big slap
+
+:: Jokes [END] {"position":"2750,900","size":"100,100"}
+From the shock of the cold water, $1$'s swallows the food but ends up looking like a wet cat
+
+:: Fight {"position":"2250,700","size":"100,100"}
+The Duke will not accept that so tries to kidnap $1$
+
+$0$ tries to help but is held by the guards, leaving him in tears on the ground [[Loss]]
+$1$ starts fights with mighty kicks and slaps [[Combat]]
+
+:: Lovers {"position":"1850,700","size":"100,100"}
+The Duke tries to kiss $1$ but $0$ doesn't agree with that
+
+$0$ lifts $1$ and tries to run away [[Escape]]
+$0$ stabs $1$ and the Duke [[My Love]]
+
+:: Loss [END] {"position":"2350,900","size":"100,100"}
+$1$ is taken away to the Kingdom of Ipandia, where she will be kept a slave, forever.
+
+:: Combat [END] {"position":"2150,900","size":"100,100"}
+$1$ ends up killing the Duke and his guards, using her special martial arts.
+
+:: Escape [END] {"position":"1750,900","size":"100,100"}
+$0$ runs away to a far land with $1$, where they lived happily ever after
+
+:: My Love [END] {"position":"1950,900","size":"100,100"}
+$0$ killed $1$ and the Duke, so that if $0$ can't love $1$, no one will.
+
+
+:: The Heist [HEIST START] {"position":"5600,1625","size":"100,100"}
+$0$, $1$ and $2$ plan the biggest heist of the year. Who will be the boss leading the Heist? 
+
+$0$ takes the lead and targets the Museum [[Museum]]
+
+:: Museum {"position":"5600,1800","size":"100,100"}
+After weeks of preparation, they inflitrate the Museum. Now they need to open the first lock.
+
+$0$ tries to dodge the lasers and get to the stop button [[Skills]]
+$1$ deploys a drone that is controlled by his phone to stop the lasers [[Stealth]]
+
+:: Stealth {"position":"5900,1900","size":"100,100"}
+The drone stops the lasers and the group can now get into the room.
+
+$2$ trips on some equipment and gets shocked by electricity [[Emergency]]
+$1$ gets called by their mom and gets yelled by the group [[Family]]
+
+:: Skills {"position":"5200,1900","size":"100,100"}
+Flexing with their acrobatic skills, $0$ tries to stop the lasers but slips on the slippery floor.
+
+$0$ starts crawling like a cat [[Determination]]
+$0$ lays on the floor like starfish while $2$ pulls them by the leg [[Delay]]
+
+:: Determination {"position":"5000,2000","size":"100,100"}
+$0$ stops the lasers and opens the door. Inside they see the famous Red Diamond
+
+$0$ takes the Red Diamond and runs alone, leaving the rest inside [[Betrayal]]
+$1$ zaps $0$ and $2$, and steals the Red Diamond [[Betrayal2]]
+
+:: Delay {"position":"5400,2000","size":"100,100"}
+$2$ saves $0$ and they start to think about another plan, when the police rushes in and points guns at them.
+
+Everyone puts their hands up and surrender [[Surrender]]
+$2$ pushes $0$ and $1$ and makes a run towards the car [[Survival]]
+
+:: Betrayal [END] {"position":"4900,2200","size":"100,100"}
+$0$ uses a grapling hook to escape through the roof with his Red Diamond, leaving the group to get caught by the police
+
+:: Betrayal2 [END] {"position":"5100,2200","size":"100,100"}
+$1$ escapes through the backdoor, leaving $0$ and $2$ shocked on the floor
+
+:: Surrender [END] {"position":"5300,2200","size":"100,100"}
+The group is caught and taken to prison. $0$ snitches some information to the cops and gets 5 years less than $1$ and $2$.
+
+:: Survival [END] {"position":"5500,2200","size":"100,100"}
+While $1$ and $0$ are getting shot, $2$ manages to get to the car and escapes
+
+:: Emergency {"position":"6100,2000","size":"100,100"}
+$2$ starts going into shock as they shake on the ground like a fish out of water
+
+$0$ tries to slap $2$, in order to help them [[Slap,Slap]]
+$1$ injects $2$ in the ass with some Adrenaline [[Injection]]
+
+
+:: Family {"position":"5700,2000","size":"100,100"}
+$1$'s mom tells them that their laundry is done and it should be picked up soon
+
+$0$ and $2$ laught at $1$ outloud [[Humor]]
+$1$ throws the phone with full force in hopes to save his embarressment [[Yeet]]
+
+:: Humor [END] {"position":"5600,2200","size":"100,100"}
+As the group laughs, new alarms get triggered and they get locked inside the Museum. The cops are on their way.
+
+:: Yeet [END] {"position":"5800,2200","size":"100,100"}
+$1$'s phone breaks the protection of the Red Diamond, allowing them to steal it, but their Mom gets arrested later that week.
+
+:: Slap,Slap [END] {"position":"6200,2200","size":"100,100"}
+While $0$ slaps $2$, their reflexes trigger and $2$ slaps $0$ so hard that they faint on the ground
+
+:: Injection [END] {"position":"6000,2200","size":"100,100"}
+The Adrenaline starts to work immediatelly, taking $2$ out of shock but making him super energetic.
